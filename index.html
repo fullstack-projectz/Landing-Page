@@ -1,0 +1,633 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Landing Page</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha384-Sv5A14N6CvKcEmYzjhR2Jyg3JHYt+jCBMQXJq5JXmnSrziPpC4qvZq36dETrgXnj" crossorigin="anonymous" />
+  <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    /* Global Styles */
+    body,
+    html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Open Sans', sans-serif;
+      scroll-behavior: smooth;
+      color: #333;
+    }
+
+    body {
+      background-color: #fff;
+    }
+
+    /* Header Styles */
+    header {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 50px;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .nav-menu a {
+      margin: 0 15px;
+      color: #333;
+      font-weight: 600;
+    }
+
+    .nav-menu a:hover {
+      color: #ff7e43;
+    }
+
+    .auth-buttons a {
+      padding: 10px 20px;
+      border-radius: 25px;
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .login {
+      background-color: transparent;
+      color: #ff7e43;
+    }
+
+    .signup {
+      background-color: #ff7e43;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      padding: 60px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .hero-text {
+      max-width: 500px;
+    }
+
+    .hero-text h1 {
+      font-size: 3em;
+      line-height: 1.2em;
+      color: #333;
+    }
+
+    .hero-text h1 span {
+      color: #ff7e43;
+    }
+
+    .hero-text p {
+      color: #666;
+      margin: 20px 0;
+      font-size: 1.2em;
+    }
+
+    .hero-text a {
+      padding: 10px 25px;
+      border-radius: 50px;
+      background-color: #ff7e43;
+      color: #fff;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    /* Form Section */
+    .form-section {
+      display: flex;
+      justify-content: space-between;
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      margin-top: 30px;
+    }
+
+    .form-section div {
+      flex: 1;
+      text-align: center;
+    }
+
+    .form-section button {
+      background-color: #ff7e43;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 50px;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    /* Section: Things to do */
+    .things-to-do {
+      text-align: center;
+      padding: 50px;
+      background-color: #f8f9fc;
+    }
+
+    .things-to-do h2 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+
+    .things-to-do .boxes {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .things-to-do .box {
+      flex: 1;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin: 10px;
+    }
+
+    .things-boxes {
+      display: flex;
+    }
+
+    .things-boxes h3 {
+      text-align: left;
+      margin-top: 50px;
+    }
+
+    .things-boxes p {
+      text-align: left;
+    }
+
+    /* Section: Exclusive Deals */
+    .deals-section {
+      text-align: center;
+      padding: 50px;
+    }
+
+    .deals-section h2 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+
+    .deals-section .deal-cards {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .deals-section .deal-card {
+      flex: 1;
+      padding: 20px;
+      margin: 10px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .deal-card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .sub-para {
+      color: #a7a5a5;
+      max-width: 500px;
+      text-align: center;
+      margin-left: 330px;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-weight: 500px;
+    }
+
+    /* section */
+    .sec-1 h2 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    .client-2 {
+      height: 200px;
+      position: relative;
+      margin: -300px 00px 0 150px;
+    }
+
+    .short-para {
+      font-size: 1em;
+      color: #666;
+      margin: 0 auto;
+    }
+
+    .deal-card-1 {
+      flex: 1;
+      margin: 10px;
+      background-color: #fff;
+    }
+
+    .short-line {
+      font-size: large;
+      text-align: left;
+      font-weight: 600;
+    }
+
+    .date {
+      font-size: smaller;
+      text-align: left;
+      font-weight: 500;
+      color: #342f2f85;
+    }
+
+    /* Section: Testimonials */
+    .testimonials {
+      padding: 50px;
+      background-color: #f8f9fc;
+      text-align: center;
+    }
+
+    .testimonials blockquote {
+      font-size: 1.2em;
+      color: #666;
+      margin: 0 auto;
+      max-width: 800px;
+    }
+
+    /* Section: Subscribe */
+    .subscribe-section {
+      padding: 50px;
+      text-align: center;
+      background-color: #ff7e43;
+      color: #fff;
+    }
+
+    .subscribe-section h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    .subscribe-section input {
+      padding: 10px;
+      width: 250px;
+      border-radius: 25px;
+      border: none;
+      margin-right: 10px;
+    }
+
+    .subscribe-section button {
+      padding: 10px 25px;
+      background-color: #fff;
+      color: #ff7e43;
+      border-radius: 25px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .highlight {
+      color: #ff7e43;
+    }
+
+    /* Footer */
+    /* footer {
+        padding: 20px;
+        background-color: #f8f9fc;
+        text-align: center;
+      }
+      footer p {
+        color: #666;
+      } */
+    footer {
+      background-color: #f5f5f5;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+    }
+
+    .footer-logo {
+      text-align: center;
+    }
+
+    .footer-logo a {
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .footer-logo p {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 10px;
+    }
+
+    .footer-logo .social-icons {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+    }
+
+    .footer-logo .social-icons li {
+      margin: 0 5px;
+    }
+
+    .footer-logo .social-icons a {
+      color: #333;
+      font-size: 20px;
+    }
+
+    .footer-links {
+      display: flex;
+      margin-left: 200px;
+    }
+
+    .footer-links ul {
+      list-style: none;
+      padding: 0;
+      margin: 0px 50px;
+    }
+
+    .footer-links ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-links ul li h4 {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .footer-links ul li a {
+      color: #666;
+      font-size: 14px;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding: 10px;
+    }
+
+    .footer-bottom p {
+      font-size: 12px;
+      color: #999;
+    }
+
+    .footer-bottom ul {
+      list-style: none;
+      display: inline-block;
+    }
+
+    .footer-bottom ul li {
+      margin: 0 5px;
+    }
+
+    .footer-bottom ul li a {
+      color: #333;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header Section -->
+  <header>
+    <div class="logo"><img src="./assets/images/Logo.png" alt="Logo" /></div>
+    <nav class="nav-menu">
+      <a>Home</a>
+      <a>About</a>
+      <a>Destination</a>
+      <a>Tour</a>
+      <a>Blog</a>
+    </nav>
+    <div class="auth-buttons">
+      <a class="login">Login</a>
+      <a class="signup">Sign up</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-text">
+      <h1>Get started your exciting <span>journey</span> with us.</h1>
+      <p>
+        A Team of experienced tourism professionals will provide you with the best advice and tips
+        for your desired place.
+      </p>
+      <a href="#">Discover Now</a>
+    </div>
+    <div class="hero-image">
+      <img src="./assets/images/homepage.png" alt="Traveler Image" width="700px" />
+    </div>
+  </section>
+
+  <!-- Form Section -->
+  <section class="form-section">
+    <div>
+      <p>Location</p>
+      <p>Where are you going</p>
+    </div>
+    <div>
+      <p>Date</p>
+      <p>When will you go</p>
+    </div>
+    <div>
+      <p>Guest</p>
+      <p>Number of guests</p>
+    </div>
+    <div>
+      <button>Explore Now</button>
+    </div>
+  </section>
+
+  <!-- Things to do Section -->
+
+  <section class="things-to-do">
+    <h2>Things you need <span class="highlight">to do</span></h2>
+    <h3 class="sub-para">
+      We ensure that you’ll embark on a perfectly planned, safe vacation at a price you can
+      afford.
+    </h3>
+    <div class="things-boxes">
+      <div class="box">
+        <img src="./assets/images/Group.png" alt="Sign Up Icon" />
+        <h3>Sign Up</h3>
+        <p>Completes all the work associated with planning and processing</p>
+      </div>
+      <div class="box">
+        <img src="./assets/images/Vector.png" alt="Worth of Money Icon" />
+        <h3>Worth of Money</h3>
+        <p>After successful access then book from exclusive deals & pricing</p>
+      </div>
+      <div class="box">
+        <img src="./assets/images/Group (1).png" alt="Exciting Travel Icon" />
+        <h3>Exciting Travel</h3>
+        <p>Start and explore a wide range of exciting travel experience.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Exclusive Deals Section -->
+  <section class="deals-section">
+    <h2>Exclusive <span class="highlight">deals & discounts</span></h2>
+    <h3 class="sub-para">
+      Discover our fantastic early booking discounts & start planning your journey.
+    </h3>
+    <div class="deal-cards">
+      <div class="deal-card">
+        <img src="./assets/images/Image (3).png" alt="Deal 1" />
+        <p>Madrid, Spain</p>
+      </div>
+      <div class="deal-card">
+        <img src="./assets/images/Image (2).png" alt="Deal 2" />
+        <p>Firenze, Italy</p>
+      </div>
+      <div class="deal-card">
+        <img src="./assets/images/Image (3).png" alt="Deal 3" />
+        <p>Paris, France</p>
+      </div>
+      <div class="deal-card">
+        <img src="./assets/images/Image (2).png" alt="Deal 3" />
+        <p>London, UK</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Best Vacation Section -->
+  <section class="deals-section">
+    <h2>Best <span class="highlight">Vacation Plan</span></h2>
+    <h3 class="sub-para">
+      Plan your perfect vacation with our travel agency. Choose among hundreds of all-inclusive
+      offers!
+    </h3>
+    <div class="deal-cards">
+      <div class="deal-card">
+        <img src="./assets/images/Image (3).png" alt="Deal 1" />
+        <p>Madrid, Spain</p>
+      </div>
+      <div class="deal-card">
+        <img src="./assets/images/Image (2).png" alt="Deal 2" />
+        <p>Firenze, Italy</p>
+      </div>
+      <div class="deal-card">
+        <img src="./assets/images/Image (3).png" alt="Deal 3" />
+        <p>Paris, France</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="things-to-do">
+    <div class="things-boxes">
+      <div class="sec-1">
+        <h2>What people say <span class="highlight">about us</span></h2>
+        <div class="short-para">
+          Our Clients send us bunch of smiles with our services and we love them.
+        </div>
+      </div>
+      <div class="sec-2">
+        <img src="./assets/images/Client-1.png" alt="client-1" height="300px" />
+        <img class="client-2" src="./assets/images/Client-2.png" alt="client-2" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Updates Section -->
+
+  <section class="deals-section">
+    <h2>Get updates with <span class="highlight">latest blog</span></h2>
+    <div class="deal-cards">
+      <div class="deal-card-1">
+        <img src="./assets/images/Image (4).png" alt="Deal 1" />
+        <p class="short-line">The Amazing Difference a Year of Travelling .</p>
+        <p class="date">July 27, 2021</p>
+      </div>
+      <div class="deal-card-1">
+        <img src="./assets/images/Image (5).png" alt="Deal 2" />
+        <p class="short-line">Travel far enough, you meet yourself</p>
+        <p class="date">July 27, 2021</p>
+      </div>
+      <div class="deal-card-1">
+        <img src="./assets/images/Image (6).png" alt="Deal 3" />
+        <p class="short-line">How to Save Money While Visiting Africa</p>
+        <p class="date">July 27, 2021</p>
+      </div>
+      <div class="deal-card-1">
+        <img src="./assets/images/Image (7).png" alt="Deal 3" />
+        <p class="short-line">Reflections on 5 Months of Travel: Time to Hang</p>
+        <p class="date">July 27, 2021</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Subscribe Section -->
+  <section class="subscribe-section">
+    <h2>Subscribe and get exclusive deals and offers</h2>
+    <input type="email" placeholder="Enter your email" />
+    <button>Subscribe</button>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-logo">
+        <a>Trabook</a>
+        <p>Book your trip in a minute, get full control for much longer.</p>
+        <ul class="social-icons">
+          <li>
+            <a><i class="fab fa-facebook"></i></a>
+          </li>
+          <li>
+            <a><i class="fa fa-instagram"></i></a>
+          </li>
+          <li>
+            <a><i class="fa fa-twitter"></i></a>
+          </li>
+           
+        </ul>
+      </div>
+       
+
+      <div class="footer-links">
+        <ul>
+          <li>
+            <h4>Company</h4>
+          </li>
+          <li><a>About</a></li>
+          <li><a>Careers</a></li>
+          <li><a>Logistic</a></li>
+          <li><a>Privacy & Policy</a></li>
+        </ul>
+        <ul>
+          <li>
+            <h4>Contact</h4>
+          </li>
+          <li><a>Help/FAQ</a></li>
+          <li><a>Press</a></li>
+          <li><a>Affiliates</a></li>
+        </ul>
+        <ul>
+          <li>
+            <h4>More</h4>
+          </li>
+          <li><a>Press Centre</a></li>
+          <li><a>Our Blog</a></li>
+          <li><a>Low fare tips</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; Copyright Trabook 2022. All rights reserved.</p>
+      <ul>
+        <li><a>Terms & Conditions</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+
+</html>
